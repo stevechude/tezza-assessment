@@ -11,9 +11,12 @@ import { LuReceipt } from "react-icons/lu";
 import { FaTasks } from "react-icons/fa";
 import { TbReport } from "react-icons/tb";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 function SideMenu() {
   const [sideMenu, setSideMenu] = useState(false);
+  const router = useRouter();
+  const currentPath = router.pathname;
 
   return (
     <>
@@ -69,11 +72,17 @@ function SideMenu() {
 
         {/* desktop */}
         <div className="hidden lg:flex flex-col gap-3">
-          <Link href={"/workspace"} className="links">
+          <Link
+            href={"/workspace"}
+            className={currentPath === "/workspace" ? "focused" : "links"}
+          >
             <AiOutlineWindows />
             <p>Workspace</p>
           </Link>
-          <Link href={"/clients"} className="links">
+          <Link
+            href={"/clients"}
+            className={currentPath === "/clients" ? "focused" : "links"}
+          >
             <PiUsersThreeDuotone />
             <p>Clients</p>
           </Link>

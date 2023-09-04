@@ -5,3 +5,7 @@
 .links {
   @apply text-[#575757] flex items-center gap-2 pl-4 py-3 hover:border-l-4 hover:border-[#ddaa3d] hover:text-[#ddaa3d];
 }
+
+.focused {
+  @apply border-l-4 border-[#ddaa3d] text-[#ddaa3d] flex items-center gap-2 pl-4 py-3;
+}
